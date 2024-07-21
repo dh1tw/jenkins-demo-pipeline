@@ -1,6 +1,13 @@
+env.DOCKER_HOST = 'unix:///var/run/docker.sock'
+
 pipeline {
     agent {
-        docker { image 'python:3.11' }
+        node {
+          label 'docker-agent'
+        }
+        docker { 
+          image 'python:3.11' 
+        }
     }
     stages {
         stage('Build') {

@@ -2,7 +2,7 @@ env.DOCKER_HOST = 'unix:///var/run/docker.sock'
 
 pipeline {
     agent {
-        docker { 
+        mybuild_agent { 
           image 'python:3.11' 
         }
     }
